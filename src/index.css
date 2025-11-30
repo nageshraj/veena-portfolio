@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-creme-50: #FFFEF9;
+  --color-creme-100: #FDFBF7;
+  --color-creme-200: #FBF6E9;
+  --color-creme-300: #F5EDCB;
+  --color-creme-900: #E6DCC0;
+
+  --color-maroon-500: #800000;
+  --color-maroon-600: #660000;
+  --color-maroon-700: #4D0000;
+  --color-maroon-800: #330000;
+  --color-maroon-900: #2A0A0A;
+
+  --color-gold-400: #E6C256;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B59428;
+}
+
+body {
+  @apply bg-creme-100 text-maroon-900 font-sans selection:bg-maroon-500 selection:text-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-serif;
+}
