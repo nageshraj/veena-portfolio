@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import MusicWave from '../components/MusicWave';
 import veenaImg from '../assets/veena_closeup_1764330045892.png';
 import vocalImg from '../assets/vocal_hero.png';
+import { featuredVideos } from '../config';
 
 const Home = () => {
     return (
@@ -79,11 +80,7 @@ const Home = () => {
                         >
                             <h3 className="text-creme-100 font-serif text-xl mb-4 text-center">FEATURED PERFORMANCES</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                {[
-                                    { id: "rC1pyqeLQY0", title: "Brahmakalasha" },
-                                    { id: "ccUiMyWMsPc", title: "Dwinade RTP" },
-                                    { id: "uIkuDVHl83A", title: "Gajavadana" }
-                                ].map((video, index) => (
+                                {featuredVideos.map((video, index) => (
                                     <div
                                         key={video.id}
                                         className="relative aspect-video rounded-lg overflow-hidden shadow-lg border border-gold-500/30 group"

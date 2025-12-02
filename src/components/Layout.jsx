@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import { motion } from 'framer-motion';
 import { playVeenaSoundWithMuteCheck as playVeenaSound } from '../utils/veenaSound';
-import config from '../config';
+import config, { socialLinks } from '../config';
 
 const Layout = ({ children }) => {
     useEffect(() => {
@@ -25,10 +25,36 @@ const Layout = ({ children }) => {
             <main className="pt-20">
                 {children}
             </main>
-            <footer className="bg-maroon-900 text-creme-200 py-12 mt-20 border-t border-maroon-800">
-                <div className="max-w-7xl mx-auto px-4 text-center text-sm">
-                    <p className="font-serif text-lg mb-2 text-gold-500">Saraswati Veena</p>
-                    &copy; {new Date().getFullYear()} Veena Musician. All rights reserved.
+            <footer className="bg-maroon-900 text-creme-200 py-4 mt-20 border-t border-maroon-800">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="flex flex-row justify-between items-center">
+                        <p className="text-xs">&copy; {new Date().getFullYear()} Veena Musician. All rights reserved.</p>
+
+                        <div className="flex items-center gap-4">
+                            {socialLinks.youtube && (
+                                <a
+                                    href={socialLinks.youtube}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gold-400 hover:text-gold-300 transition-colors duration-300 hover:scale-110 transform"
+                                    aria-label="YouTube"
+                                >
+                                    <i className="fab fa-youtube text-xl"></i>
+                                </a>
+                            )}
+                            {socialLinks.instagram && (
+                                <a
+                                    href={socialLinks.instagram}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gold-400 hover:text-gold-300 transition-colors duration-300 hover:scale-110 transform"
+                                    aria-label="Instagram"
+                                >
+                                    <i className="fab fa-instagram text-xl"></i>
+                                </a>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>
