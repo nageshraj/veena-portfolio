@@ -4,17 +4,17 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
 
-  --color-creme-50: #FFFEF9;
-  --color-creme-100: #FDFBF7;
-  --color-creme-200: #FBF6E9;
-  --color-creme-300: #F5EDCB;
-  --color-creme-900: #E6DCC0;
+  --color-creme-50: #FFF8E6;
+  --color-creme-100: #FFF0C4;
+  --color-creme-200: #FFE8A3;
+  --color-creme-300: #FFD666;
+  --color-creme-900: #E6C256;
 
-  --color-maroon-500: #800000;
-  --color-maroon-600: #660000;
-  --color-maroon-700: #4D0000;
-  --color-maroon-800: #330000;
-  --color-maroon-900: #2A0A0A;
+  --color-maroon-500: #8C1007;
+  --color-maroon-600: #660B05;
+  --color-maroon-700: #520904;
+  --color-maroon-800: #460804;
+  --color-maroon-900: #3E0703;
 
   --color-gold-400: #E6C256;
   --color-gold-500: #D4AF37;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import MusicWave from '../components/MusicWave';
 
 const Home = () => {
     return (
         <div className="relative">
-            {/* Hero Section */}
             {/* Hero Section */}
             <section className="h-[90vh] flex items-center justify-center relative overflow-hidden bg-creme-100">
                 {/* Decorative elements */}
@@ -13,6 +13,9 @@ const Home = () => {
                     <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-maroon-500 blur-[120px]" />
                     <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold-500 blur-[120px]" />
                 </div>
+
+                {/* Music Wave Visualizer */}
+                <MusicWave />
 
                 <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
                     <motion.h1

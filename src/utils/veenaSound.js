@@ -1,6 +1,8 @@
 // Veena sound synthesizer using Web Audio API
 
 let audioContext = null;
+let masterGain = null;
+let analyser = null;
 let noteIndex = 0;
 
 // Mohanam Raga scale (Pentatonic: C, D, E, G, A)
@@ -18,15 +20,34 @@ const scale = [
     293.66  // Ri (D4)
 ];
 
-export const playVeenaSound = () => {
-    // Initialize AudioContext on first user interaction
+const initAudio = () => {
     if (!audioContext) {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        masterGain = audioContext.createGain();
+        analyser = audioContext.createAnalyser();
+
+        // Configure analyser
+        analyser.fftSize = 2048;
+        analyser.smoothingTimeConstant = 0.8;
+
+        masterGain.connect(analyser);
+        analyser.connect(audioContext.destination);
+
+        // Initial master volume
+        masterGain.gain.value = 0.5;
     }
 
     if (audioContext.state === 'suspended') {
         audioContext.resume();
     }
+};
+
+export const getAnalyser = () => {
+    return analyser;
+};
+
+export const playVeenaSound = () => {
+    initAudio();
 
     const t = audioContext.currentTime;
     const frequency = scale[noteIndex % scale.length];
@@ -34,7 +55,7 @@ export const playVeenaSound = () => {
 
     // Create nodes
     const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
+    const noteGain = audioContext.createGain();
     const filterNode = audioContext.createBiquadFilter();
 
     // Configure Oscillator (Sawtooth for string harmonics)
@@ -52,14 +73,14 @@ export const playVeenaSound = () => {
     filterNode.frequency.exponentialRampToValueAtTime(500, t + 1.5); // Dampen over time
 
     // Configure Envelope (Pluck shape)
-    gainNode.gain.setValueAtTime(0, t);
-    gainNode.gain.linearRampToValueAtTime(0.3, t + 0.02); // Fast attack
-    gainNode.gain.exponentialRampToValueAtTime(0.001, t + 2.0); // Long decay (resonance)
+    noteGain.gain.setValueAtTime(0, t);
+    noteGain.gain.linearRampToValueAtTime(0.3, t + 0.02); // Fast attack
+    noteGain.gain.exponentialRampToValueAtTime(0.001, t + 2.0); // Long decay (resonance)
 
-    // Connect graph
+    // Connect graph: Osc -> Filter -> NoteGain -> MasterGain -> Analyser -> Dest
     oscillator.connect(filterNode);
-    filterNode.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+    filterNode.connect(noteGain);
+    noteGain.connect(masterGain);
 
     // Play
     oscillator.start(t);
