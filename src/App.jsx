@@ -10,6 +10,7 @@ import Admin from './pages/Admin';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import Music from './pages/Music';
+import Press from './pages/Press';
 import { About, Vocal, Veena } from './pages/Placeholders';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/music" element={<Music />} />
+            <Route path="/press" element={<Press />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/vocal" element={<Vocal />} />
             <Route path="/veena" element={<Veena />} />

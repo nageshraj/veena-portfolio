@@ -33,6 +33,26 @@ export const musicVideos = {
     ]
 };
 
+export const pressArticles = [
+    {
+        title: "Rising Star in Carnatic Music",
+        publication: "The Hindu",
+        date: "2024-01-15",
+        url: "https://example.com/article1",
+        excerpt: "A deep dive into the musical journey and achievements of this talented veena artist.",
+        imageUrl: "" // Optional: Add image URL
+    },
+    {
+        title: "Preserving Traditional Veena Music",
+        publication: "Deccan Chronicle",
+        date: "2023-11-20",
+        url: "https://example.com/article2",
+        excerpt: "How young musicians are keeping the ancient art of veena alive in modern times.",
+        imageUrl: ""
+    },
+    // Add more articles here
+];
+
 // Default export for backwards compatibility
 export default {
     enableClickSound: false
