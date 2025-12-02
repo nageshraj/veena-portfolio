@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Music from './pages/Music';
 import { About, Vocal, Veena } from './pages/Placeholders';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/music" element={<Music />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/vocal" element={<Vocal />} />
             <Route path="/veena" element={<Veena />} />
