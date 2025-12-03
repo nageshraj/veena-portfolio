@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Music, Volume2, VolumeX } from 'lucide-react';
+import { Menu, X, Music, Volume2, VolumeX, Download } from 'lucide-react';
 import { toggleMute, getMuteState } from '../utils/veenaSound';
+import { generatePortfolioPDF } from '../utils/generatePortfolioPDF';
 import config from '../config';
 
 const Navbar = () => {
@@ -58,6 +59,16 @@ const Navbar = () => {
                                 )}
                             </Link>
                         ))}
+                        {/* Download Portfolio Button */}
+                        <button
+                            onClick={generatePortfolioPDF}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-maroon-900 bg-gold-500 hover:bg-gold-600 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
+                            title="Download Portfolio"
+                        >
+                            <Download className="h-3.5 w-3.5" />
+                            <span className="hidden lg:inline">Portfolio</span>
+                        </button>
+                        
                         {config.enableClickSound && (
                             <button
                                 onClick={handleMuteToggle}
@@ -69,8 +80,17 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    {/* Mobile Menu Button & Mute */}
+                    {/* Mobile Menu Button, Download & Mute */}
                     <div className="md:hidden flex items-center space-x-3">
+                        {/* Download Portfolio Button - Mobile */}
+                        <button
+                            onClick={generatePortfolioPDF}
+                            className="inline-flex items-center p-1.5 text-maroon-900 bg-gold-500 hover:bg-gold-600 rounded-full transition-all duration-300"
+                            title="Download Portfolio"
+                        >
+                            <Download className="h-4 w-4" />
+                        </button>
+                        
                         {config.enableClickSound && (
                             <button
                                 onClick={handleMuteToggle}
