@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Minimize2, Maximize2 } from 'lucide-react';
 import { musicVideos } from '../config';
 
 const Music = () => {
+    // Configuration: Set to false to start with all sections collapsed
+    const SECTIONS_EXPANDED_BY_DEFAULT = true;
+
     const sections = [
         { key: 'veena', title: 'Veena', videos: musicVideos.veena },
         { key: 'vocal', title: 'Vocal', videos: musicVideos.vocal },
@@ -12,10 +15,10 @@ const Music = () => {
         { key: 'otherForms', title: 'Other Forms', videos: musicVideos.otherForms },
     ];
 
-    // State to track which sections are expanded (all expanded by default)
+    // State to track which sections are expanded
     const [expandedSections, setExpandedSections] = useState(
         sections.reduce((acc, section) => {
-            acc[section.key] = true;
+            acc[section.key] = SECTIONS_EXPANDED_BY_DEFAULT;
             return acc;
         }, {})
     );
@@ -27,24 +30,56 @@ const Music = () => {
         }));
     };
 
+    const toggleAll = () => {
+        const allExpanded = Object.values(expandedSections).every(val => val);
+        const newState = sections.reduce((acc, section) => {
+            acc[section.key] = !allExpanded;
+            return acc;
+        }, {});
+        setExpandedSections(newState);
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-creme-100 to-creme-200 py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Page Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
-                >
-                    <h1 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900 mb-4">
-                        Music Collection
-                    </h1>
-                    <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
-                    <p className="text-sm md:text-base text-maroon-700 max-w-2xl mx-auto">
-                        Explore performances across different styles and forms
-                    </p>
-                </motion.div>
+                <div className="relative mb-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center"
+                    >
+                        <h1 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900 mb-4">
+                            Music Collection
+                        </h1>
+                        <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
+                        <p className="text-sm md:text-base text-maroon-700 max-w-2xl mx-auto">
+                            Explore performances across different styles and forms
+                        </p>
+                    </motion.div>
+                    
+                    {/* Toggle All Button - Top Right */}
+                    <motion.button
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        onClick={toggleAll}
+                        className="absolute top-0 right-0 inline-flex items-center gap-2 px-4 py-2 text-xs md:text-sm text-maroon-900 hover:text-gold-600 border border-maroon-300 hover:border-gold-500 rounded-full transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white shadow-sm hover:shadow-md"
+                    >
+                        {Object.values(expandedSections).every(val => val) ? (
+                            <>
+                                <Minimize2 size={14} />
+                                <span className="hidden sm:inline">Collapse All</span>
+                            </>
+                        ) : (
+                            <>
+                                <Maximize2 size={14} />
+                                <span className="hidden sm:inline">Expand All</span>
+                            </>
+                        )}
+                    </motion.button>
+                </div>
 
                 {/* Video Sections */}
                 {sections.map((section, sectionIndex) => (
@@ -56,25 +91,28 @@ const Music = () => {
                             transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
                             className="mb-6"
                         >
-                            {/* Section Header - Clickable */}
+                            {/* Section Header - Minimal & Sophisticated */}
                             <button
                                 onClick={() => toggleSection(section.key)}
-                                className="w-full flex items-center justify-between mb-4 p-4 bg-maroon-900/10 hover:bg-maroon-900/20 rounded-lg transition-colors duration-300 group"
+                                className="w-full flex items-center justify-between mb-4 py-3 px-4 border-l-2 border-peacock-500 bg-white/60 hover:bg-white/90 backdrop-blur-sm rounded-r-lg transition-all duration-300 group shadow-sm hover:shadow-md"
                             >
                                 <div className="flex items-center gap-3">
-                                    <h2 className="text-lg md:text-xl font-serif font-bold text-maroon-900">
+                                    <h2 className="text-base md:text-lg font-serif font-semibold text-maroon-900 group-hover:text-peacock-700 transition-colors">
                                         {section.title}
                                     </h2>
-                                    <span className="text-sm text-maroon-700 bg-gold-500/20 px-3 py-1 rounded-full">
-                                        {section.videos.length} {section.videos.length === 1 ? 'video' : 'videos'}
+                                    <span className="text-xs text-maroon-600 bg-gold-500/15 px-2 py-0.5 rounded-full font-medium">
+                                        {section.videos.length}
                                     </span>
                                 </div>
-                                <div className="text-maroon-900 group-hover:text-gold-600 transition-colors">
-                                    {expandedSections[section.key] ? (
-                                        <ChevronUp size={28} />
-                                    ) : (
-                                        <ChevronDown size={28} />
-                                    )}
+                                <div className="flex items-center gap-2">
+                                    <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold-500/50 group-hover:to-gold-500 transition-all"></div>
+                                    <div className="text-peacock-600 group-hover:text-gold-600 transition-colors">
+                                        {expandedSections[section.key] ? (
+                                            <ChevronUp size={20} />
+                                        ) : (
+                                            <ChevronDown size={20} />
+                                        )}
+                                    </div>
                                 </div>
                             </button>
 
