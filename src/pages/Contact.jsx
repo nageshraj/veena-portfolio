@@ -73,10 +73,10 @@ const Contact = () => {
             exit={{ opacity: 0 }}
             className="max-w-4xl mx-auto px-4 py-12"
         >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-center text-maroon-900">
+            <h1 className="text-2xl md:text-3xl font-serif font-bold mb-4 text-center text-maroon-900">
                 Get in Touch
             </h1>
-            <p className="text-maroon-700 text-center mb-12 text-lg">
+            <p className="text-maroon-700 text-center mb-8 text-sm md:text-base">
                 Interested in concerts, classes, or collaborations? Send us a message.
             </p>
 
@@ -97,8 +97,8 @@ const Contact = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl font-serif font-bold text-gold-500 mb-2">Thank You!</h3>
-                        <p className="text-creme-200">Your message has been sent successfully. We'll get back to you soon.</p>
+                        <h3 className="text-lg md:text-xl font-serif font-bold text-gold-500 mb-2">Thank You!</h3>
+                        <p className="text-sm md:text-base text-creme-200">Your message has been sent successfully. We'll get back to you soon.</p>
                     </motion.div>
                 ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">

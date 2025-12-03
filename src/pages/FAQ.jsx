@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import RangoliPattern from '../components/RangoliPattern';
-import LotusDivider from '../components/LotusDivider';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -48,7 +47,7 @@ const FAQ = () => {
     };
 
     return (
-        <div className="min-h-screen silk-gradient pt-24 pb-16 relative overflow-hidden">
+        <div className="min-h-screen silk-gradient py-12 relative overflow-hidden">
             {/* Decorative Rangoli Pattern Background */}
             <RangoliPattern className="text-gold-600" opacity={0.03} />
             
@@ -60,11 +59,11 @@ const FAQ = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-maroon-900 mb-4">
+                    <h1 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900 mb-4">
                         Frequently Asked Questions
                     </h1>
-                    <LotusDivider />
-                    <p className="text-lg text-maroon-700 max-w-2xl mx-auto">
+                    <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
+                    <p className="text-sm md:text-base text-maroon-700 max-w-2xl mx-auto">
                         Find answers to common questions about performances, lessons, and the Saraswati Veena
                     </p>
                 </motion.div>
@@ -81,9 +80,9 @@ const FAQ = () => {
                         >
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-creme-50 transition-all duration-300 gold-shimmer-hover"
+                                className="w-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between text-left hover:bg-creme-50 transition-all duration-300 gold-shimmer-hover"
                             >
-                                <span className="text-lg font-medium text-maroon-900 pr-4">
+                                <span className="text-sm md:text-base font-medium text-maroon-900 pr-4">
                                     {faq.question}
                                 </span>
                                 <motion.div
@@ -104,7 +103,7 @@ const FAQ = () => {
                                         transition={{ duration: 0.3 }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="px-6 pb-5 pt-2 text-maroon-700 leading-relaxed border-t border-gold-100">
+                                        <div className="px-4 md:px-6 pb-4 pt-2 text-sm md:text-base text-maroon-700 leading-relaxed border-t border-gold-100">
                                             {faq.answer}
                                         </div>
                                     </motion.div>
@@ -123,15 +122,15 @@ const FAQ = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-peacock-700/20 to-transparent pointer-events-none"></div>
                     <div className="relative z-10">
-                    <h3 className="text-2xl font-serif text-creme-100 mb-3">
+                    <h3 className="text-lg md:text-xl font-serif text-creme-100 mb-2">
                         Still have questions?
                     </h3>
-                    <p className="text-creme-200 mb-6">
+                    <p className="text-sm md:text-base text-creme-200 mb-4">
                         Feel free to reach out, and I'll be happy to help
                     </p>
                     <Link
                         to="/contact"
-                        className="inline-block bg-gold-500 hover:bg-gold-600 text-maroon-900 px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-gold-500/50"
+                        className="inline-block bg-gold-500 hover:bg-gold-600 text-maroon-900 px-6 py-2 text-sm md:text-base rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-gold-500/50"
                     >
                         Contact Me
                     </Link>

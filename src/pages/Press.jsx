@@ -14,11 +14,11 @@ const Press = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-maroon-900 mb-4">
+                    <h1 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900 mb-4">
                         Press & Media
                     </h1>
                     <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
-                    <p className="text-lg text-maroon-700 max-w-2xl mx-auto">
+                    <p className="text-sm md:text-base text-maroon-700 max-w-2xl mx-auto">
                         Featured articles and media coverage
                     </p>
                 </motion.div>

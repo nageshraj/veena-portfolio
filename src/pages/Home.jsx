@@ -27,8 +27,8 @@ const Home = () => {
                             alt="Veena Performance"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute top-8 left-8 z-20 text-creme-100 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                            <h2 className="text-3xl font-serif drop-shadow-lg">Veena</h2>
+                        <div className="absolute top-6 left-6 z-20 text-creme-100 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                            <h2 className="text-xl md:text-2xl font-serif drop-shadow-lg">Veena</h2>
                         </div>
                     </div>
 
@@ -40,8 +40,8 @@ const Home = () => {
                             alt="Vocal Performance"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute top-8 right-8 z-20 text-creme-100 opacity-80 group-hover:opacity-100 transition-opacity duration-500 text-right">
-                            <h2 className="text-3xl font-serif drop-shadow-lg">Vocal</h2>
+                        <div className="absolute top-6 right-6 z-20 text-creme-100 opacity-80 group-hover:opacity-100 transition-opacity duration-500 text-right">
+                            <h2 className="text-xl md:text-2xl font-serif drop-shadow-lg">Vocal</h2>
                         </div>
                     </div>
                 </div>
@@ -59,15 +59,15 @@ const Home = () => {
                         >
                             <RangoliPattern className="text-gold-500" opacity={0.04} />
                             <div className="relative z-10">
-                            <h1 className="text-3xl md:text-5xl font-serif font-bold text-maroon-900 mb-3">
+                            <h1 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900 mb-3">
                                 Veena Srivani
                             </h1>
-                            <LotusDivider className="my-4" />
-                            <p className="text-base md:text-lg text-maroon-800 mb-6 font-light leading-relaxed">
+                            <LotusDivider className="my-3" />
+                            <p className="text-sm md:text-base text-maroon-800 mb-4 font-light leading-relaxed">
                                 Bridging ancient tradition and modern expression through the divine Saraswati Veena and soulful vocals.
                             </p>
                             <Link to="/about">
-                                <button className="bg-maroon-800 hover:bg-maroon-700 text-creme-100 px-6 py-2 rounded-full text-base font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-gold-500/30">
+                                <button className="bg-gradient-to-r from-maroon-800 to-peacock-700 hover:from-maroon-700 hover:to-peacock-600 text-creme-100 px-5 py-2 rounded-full text-sm md:text-base font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-peacock-500/40">
                                     Read More
                                 </button>
                             </Link>
@@ -83,7 +83,7 @@ const Home = () => {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="card-elegant bg-maroon-900/70 backdrop-blur-md p-4 border border-gold-500/30 shadow-2xl"
                         >
-                            <h3 className="text-creme-100 font-serif text-xl mb-4 text-center">FEATURED PERFORMANCES</h3>
+                            <h3 className="text-creme-100 font-serif text-base md:text-lg mb-3 text-center tracking-wider">FEATURED PERFORMANCES</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {featuredVideos.map((video, index) => (
                                     <div

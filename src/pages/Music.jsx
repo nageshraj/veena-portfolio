@@ -37,11 +37,11 @@ const Music = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-maroon-900 mb-4">
+                    <h1 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900 mb-4">
                         Music Collection
                     </h1>
                     <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
-                    <p className="text-lg text-maroon-700 max-w-2xl mx-auto">
+                    <p className="text-sm md:text-base text-maroon-700 max-w-2xl mx-auto">
                         Explore performances across different styles and forms
                     </p>
                 </motion.div>
@@ -62,7 +62,7 @@ const Music = () => {
                                 className="w-full flex items-center justify-between mb-4 p-4 bg-maroon-900/10 hover:bg-maroon-900/20 rounded-lg transition-colors duration-300 group"
                             >
                                 <div className="flex items-center gap-3">
-                                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-maroon-900">
+                                    <h2 className="text-lg md:text-xl font-serif font-bold text-maroon-900">
                                         {section.title}
                                     </h2>
                                     <span className="text-sm text-maroon-700 bg-gold-500/20 px-3 py-1 rounded-full">
@@ -110,7 +110,7 @@ const Music = () => {
 
                                                     {/* Video Title */}
                                                     <div className="p-4 bg-gradient-to-b from-white to-creme-50">
-                                                        <h3 className="text-base font-medium text-maroon-900 line-clamp-2">
+                                                        <h3 className="text-sm md:text-base font-medium text-maroon-900 line-clamp-2">
                                                             {video.title}
                                                         </h3>
                                                     </div>

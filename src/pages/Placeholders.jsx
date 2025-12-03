@@ -13,15 +13,16 @@ export const About = () => (
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-serif font-bold mb-4 text-maroon-900"
+                className="text-2xl md:text-3xl font-serif font-bold mb-4 text-maroon-900"
             >
                 About the Artist
             </motion.h1>
+            <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-maroon-700 text-lg max-w-2xl mx-auto"
+                className="text-maroon-700 text-sm md:text-base max-w-2xl mx-auto"
             >
                 A journey through the divine world of classical Indian music
             </motion.p>
@@ -44,14 +45,14 @@ export const About = () => (
                 transition={{ delay: 0.3 }}
                 className="flex flex-col justify-center"
             >
-                <h2 className="text-3xl font-serif font-bold text-maroon-900 mb-6">Musical Journey</h2>
-                <p className="text-maroon-800 mb-4 leading-relaxed">
+                <h2 className="text-xl md:text-2xl font-serif font-bold text-maroon-900 mb-4">Musical Journey</h2>
+                <p className="text-sm md:text-base text-maroon-800 mb-3 leading-relaxed">
                     With over 25 years of dedicated practice and performance, our artist has established themselves as a distinguished practitioner of the Saraswati Veena and Carnatic vocal music. Their journey began at the age of 5 under the tutelage of renowned gurus in Chennai.
                 </p>
-                <p className="text-maroon-800 mb-4 leading-relaxed">
+                <p className="text-sm md:text-base text-maroon-800 mb-3 leading-relaxed">
                     Having performed at prestigious venues across India and internationally, they bring a unique blend of traditional authenticity and contemporary expression to their art. Their performances are known for their emotional depth and technical precision.
                 </p>
-                <p className="text-maroon-800 leading-relaxed">
+                <p className="text-sm md:text-base text-maroon-800 leading-relaxed">
                     Beyond performance, they are deeply committed to preserving and propagating this ancient art form through dedicated teaching and mentorship.
                 </p>
             </motion.div>
@@ -110,15 +111,16 @@ export const Vocal = () => (
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-serif font-bold mb-4 text-maroon-900"
+                className="text-2xl md:text-3xl font-serif font-bold mb-4 text-maroon-900"
             >
                 Carnatic Vocal Music
             </motion.h1>
+            <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-maroon-700 text-lg max-w-2xl mx-auto"
+                className="text-maroon-700 text-sm md:text-base max-w-2xl mx-auto"
             >
                 Discover the beauty of South Indian classical vocal tradition
             </motion.p>
@@ -240,15 +242,16 @@ export const Veena = () => (
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-serif font-bold mb-4 text-maroon-900"
+                className="text-2xl md:text-3xl font-serif font-bold mb-4 text-maroon-900"
             >
                 Saraswati Veena Classes
             </motion.h1>
+            <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-maroon-700 text-lg max-w-2xl mx-auto"
+                className="text-maroon-700 text-sm md:text-base max-w-2xl mx-auto"
             >
                 Master the divine instrument of Goddess Saraswati
             </motion.p>

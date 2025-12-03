@@ -115,15 +115,16 @@ const Gallery = () => {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-4xl md:text-5xl font-serif font-bold mb-4 text-maroon-900"
+                    className="text-2xl md:text-3xl font-serif font-bold mb-4 text-maroon-900"
                 >
                     Visual Journey
                 </motion.h1>
+                <div className="h-1 w-24 bg-gold-500 mx-auto mb-4"></div>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-maroon-700 text-lg max-w-2xl mx-auto"
+                    className="text-maroon-700 text-sm md:text-base max-w-2xl mx-auto"
                 >
                     Glimpses of performances, instruments, and musical moments
                 </motion.p>
@@ -165,7 +166,7 @@ const Gallery = () => {
                             />
                             {/* Image Caption Overlay */}
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-maroon-900/90 to-transparent p-8">
-                                <h3 className="text-creme-100 text-2xl font-serif font-bold mb-1">
+                                <h3 className="text-creme-100 text-lg md:text-xl font-serif font-bold mb-1">
                                     {galleryImages[currentIndex].name}
                                 </h3>
                                 <p className="text-gold-400 text-sm">
