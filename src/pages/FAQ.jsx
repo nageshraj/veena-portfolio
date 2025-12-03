@@ -48,7 +48,7 @@ const FAQ = () => {
     };
 
     return (
-        <div className="min-h-screen silk-gradient pt-32 pb-16 relative overflow-hidden">
+        <div className="min-h-screen silk-gradient pt-24 pb-16 relative overflow-hidden">
             {/* Decorative Rangoli Pattern Background */}
             <RangoliPattern className="text-gold-600" opacity={0.03} />
             
