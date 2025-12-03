@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import RangoliPattern from '../components/RangoliPattern';
+import LotusDivider from '../components/LotusDivider';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -46,8 +48,11 @@ const FAQ = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-creme-100 to-creme-200 pt-32 pb-16">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen silk-gradient pt-32 pb-16 relative overflow-hidden">
+            {/* Decorative Rangoli Pattern Background */}
+            <RangoliPattern className="text-gold-600" opacity={0.03} />
+            
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -58,7 +63,7 @@ const FAQ = () => {
                     <h1 className="text-4xl md:text-5xl font-serif font-bold text-maroon-900 mb-4">
                         Frequently Asked Questions
                     </h1>
-                    <div className="h-1 w-24 bg-gold-500 mx-auto mb-6"></div>
+                    <LotusDivider />
                     <p className="text-lg text-maroon-700 max-w-2xl mx-auto">
                         Find answers to common questions about performances, lessons, and the Saraswati Veena
                     </p>
@@ -72,11 +77,11 @@ const FAQ = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white rounded-lg shadow-md border border-gold-200/30 overflow-hidden"
+                            className="card-elegant bg-white/95 backdrop-blur-sm border border-gold-300/40 overflow-hidden hover:shadow-xl transition-shadow duration-300"
                         >
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-creme-50 transition-colors"
+                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-creme-50 transition-all duration-300 gold-shimmer-hover"
                             >
                                 <span className="text-lg font-medium text-maroon-900 pr-4">
                                     {faq.question}
@@ -114,8 +119,10 @@ const FAQ = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="mt-12 text-center bg-maroon-900 rounded-lg p-8 shadow-lg"
+                    className="mt-12 text-center silk-gradient-dark card-elegant p-8 shadow-2xl border border-gold-500/20 relative overflow-hidden"
                 >
+                    <div className="absolute inset-0 bg-gradient-to-br from-peacock-700/20 to-transparent pointer-events-none"></div>
+                    <div className="relative z-10">
                     <h3 className="text-2xl font-serif text-creme-100 mb-3">
                         Still have questions?
                     </h3>
@@ -124,10 +131,11 @@ const FAQ = () => {
                     </p>
                     <Link
                         to="/contact"
-                        className="inline-block bg-gold-500 hover:bg-gold-600 text-maroon-900 px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg"
+                        className="inline-block bg-gold-500 hover:bg-gold-600 text-maroon-900 px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-gold-500/50"
                     >
                         Contact Me
                     </Link>
+                    </div>
                 </motion.div>
             </div>
         </div>

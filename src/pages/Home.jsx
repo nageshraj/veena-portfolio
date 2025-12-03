@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import MusicWave from '../components/MusicWave';
+import RangoliPattern from '../components/RangoliPattern';
+import LotusDivider from '../components/LotusDivider';
 import veenaImg from '../assets/veena_closeup_1764330045892.png';
 import vocalImg from '../assets/vocal_hero.png';
 import { featuredVideos } from '../config';
@@ -53,20 +55,23 @@ const Home = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8 }}
-                            className="bg-creme-100/90 backdrop-blur-md p-6 md:p-10 rounded-2xl shadow-2xl border border-gold-400/30 max-w-xl mx-4 text-center"
+                            className="card-elegant bg-creme-100/95 backdrop-blur-md p-6 md:p-10 shadow-2xl border border-gold-400/40 max-w-xl mx-4 text-center relative overflow-hidden"
                         >
+                            <RangoliPattern className="text-gold-500" opacity={0.04} />
+                            <div className="relative z-10">
                             <h1 className="text-3xl md:text-5xl font-serif font-bold text-maroon-900 mb-3">
                                 Veena Srivani
                             </h1>
-                            <div className="h-1 w-16 bg-gold-500 mx-auto mb-4"></div>
+                            <LotusDivider className="my-4" />
                             <p className="text-base md:text-lg text-maroon-800 mb-6 font-light leading-relaxed">
                                 Bridging ancient tradition and modern expression through the divine Saraswati Veena and soulful vocals.
                             </p>
                             <Link to="/about">
-                                <button className="bg-maroon-800 hover:bg-maroon-700 text-creme-100 px-6 py-2 rounded-full text-base font-medium transition-all transform hover:scale-105 shadow-lg">
+                                <button className="bg-maroon-800 hover:bg-maroon-700 text-creme-100 px-6 py-2 rounded-full text-base font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-gold-500/30">
                                     Read More
                                 </button>
                             </Link>
+                            </div>
                         </motion.div>
                     </div>
 
@@ -76,14 +81,14 @@ const Home = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="bg-maroon-900/60 backdrop-blur-md rounded-xl p-4 border border-gold-500/20"
+                            className="card-elegant bg-maroon-900/70 backdrop-blur-md p-4 border border-gold-500/30 shadow-2xl"
                         >
                             <h3 className="text-creme-100 font-serif text-xl mb-4 text-center">FEATURED PERFORMANCES</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {featuredVideos.map((video, index) => (
                                     <div
                                         key={video.id}
-                                        className="relative aspect-video rounded-lg overflow-hidden shadow-lg border border-gold-500/30 group"
+                                        className="relative aspect-video rounded-xl overflow-hidden shadow-lg border border-gold-500/40 group hover:border-gold-400 transition-all duration-300"
                                     >
                                         <iframe
                                             src={`https://www.youtube.com/embed/${video.id}`}

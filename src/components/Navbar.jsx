@@ -29,15 +29,15 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-maroon-900/95 backdrop-blur-md border-b border-maroon-800 shadow-lg shadow-maroon-900/20">
+        <nav className="fixed top-0 left-0 w-full z-50 silk-gradient-dark backdrop-blur-md border-b border-gold-500/20 shadow-2xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-24">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-3 text-gold-500 hover:text-gold-400 transition-colors group">
-                        <div className="p-2 bg-maroon-800 rounded-full border border-maroon-700 group-hover:border-gold-500/50 transition-colors">
+                    <Link to="/" className="flex items-center space-x-3 text-gold-500 hover:text-gold-400 transition-all duration-300 group">
+                        <div className="p-2 bg-maroon-800/80 rounded-full border border-gold-500/30 group-hover:border-gold-400 group-hover:shadow-lg group-hover:shadow-gold-500/30 transition-all duration-300">
                             <Music className="h-6 w-6" />
                         </div>
-                        <span className="text-2xl font-serif font-bold tracking-wider uppercase text-creme-100">Saraswati Veena</span>
+                        <span className="text-2xl font-serif font-bold tracking-wider uppercase text-creme-100 group-hover:text-gold-400 transition-colors">Saraswati Veena</span>
                     </Link>
 
                     {/* Desktop Menu */}
@@ -46,14 +46,14 @@ const Navbar = () => {
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className={`relative text-sm uppercase tracking-widest font-medium hover:text-gold-500 transition-colors ${location.pathname === link.path ? 'text-gold-500' : 'text-creme-200'
+                                className={`relative text-sm uppercase tracking-widest font-medium hover:text-gold-400 transition-all duration-300 ${location.pathname === link.path ? 'text-gold-500' : 'text-creme-200'
                                     }`}
                             >
                                 {link.name}
                                 {location.pathname === link.path && (
                                     <motion.div
                                         layoutId="underline"
-                                        className="absolute left-0 top-full mt-1 w-full h-0.5 bg-gold-500"
+                                        className="absolute left-0 top-full mt-1 w-full h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent shadow-lg shadow-gold-500/50"
                                     />
                                 )}
                             </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
                         {config.enableClickSound && (
                             <button
                                 onClick={handleMuteToggle}
-                                className="text-creme-300 hover:text-gold-500 transition-colors focus:outline-none p-2 hover:bg-maroon-800 rounded-full"
+                                className="text-creme-300 hover:text-gold-400 transition-all duration-300 focus:outline-none p-2 hover:bg-maroon-800/50 rounded-full hover:shadow-lg hover:shadow-gold-500/20"
                                 title={isMuted ? "Unmute Sound" : "Mute Sound"}
                             >
                                 {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
@@ -104,9 +104,9 @@ const Navbar = () => {
                                     key={link.name}
                                     to={link.path}
                                     onClick={() => setIsOpen(false)}
-                                    className={`block px-4 py-3 rounded-md text-base font-medium font-serif tracking-wide ${location.pathname === link.path
-                                        ? 'text-gold-500 bg-maroon-800'
-                                        : 'text-creme-200 hover:text-white hover:bg-maroon-800'
+                                    className={`block px-4 py-3 rounded-xl text-base font-medium font-serif tracking-wide transition-all duration-300 ${location.pathname === link.path
+                                        ? 'text-gold-500 bg-maroon-800/80 border border-gold-500/30'
+                                        : 'text-creme-200 hover:text-gold-400 hover:bg-maroon-800/50'
                                         }`}
                                 >
                                     {link.name}
